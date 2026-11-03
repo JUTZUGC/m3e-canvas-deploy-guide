@@ -1,0 +1,107 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "m3ecanvas",
+    "nameCn": "M3E Canvas",
+    "repoName": "m3e-canvas-deploy-guide",
+    "oneLiner": "用真实 Material 3 组件拼界面，拼完直接变成给 agent 的提示词",
+    "officialRepo": "https://github.com/lnkiai/m3e-canvas",
+    "officialDocs": "https://github.com/lnkiai/m3e-canvas#run-it-locally",
+    "stars": "10013",
+    "license": "MIT",
+    "highlights": [
+      "真实 Material 3 组件",
+      "拼完直接导出提示词",
+      "浏览器本地运行，无账号",
+      "支持分享链接与 agent 指令",
+      "可安装为 PWA",
+      "MIT，可改"
+    ],
+    "mcpSupport": "项目本身不含 MCP；本仓库的 MCP 只提供部署步骤、端口与常见问题。",
+    "webuiUrl": "http://localhost:3000",
+    "adapterPorts": "",
+    "collectedAt": "2026-11-03",
+    "verification": [
+      [
+        "README 确认静态 Next.js、3000 端口与提示词导出",
+        "已核对 2026-11-03"
+      ],
+      [
+        "未实测安装与构建",
+        "说明 2026-11-03"
+      ],
+      [
+        "MCP 冒烟：initialize / tools/list 返回 get_guide、search_guide、get_project_info",
+        "已验证 2026-11-03"
+      ],
+      [
+        "非目标宿主调用 get_guide 被拦截（HOST_NOT_ALLOWED）",
+        "已验证 2026-11-03"
+      ]
+    ],
+    "deploy": {
+      "type": "script",
+      "requires": [
+        "node"
+      ],
+      "steps": [
+        "git clone https://github.com/lnkiai/m3e-canvas.git",
+        "cd m3e-canvas && npm install",
+        "npm run dev",
+        "echo \"打开 http://localhost:3000\""
+      ],
+      "stepsPs": [
+        "git clone https://github.com/lnkiai/m3e-canvas.git",
+        "Set-Location m3e-canvas; npm install",
+        "npm run dev",
+        "Write-Host \"打开 http://localhost:3000\""
+      ],
+      "source": "https://github.com/lnkiai/m3e-canvas#run-it-locally"
+    },
+    "pitfalls": [
+      "3000 被占用：换端口启动",
+      "页面空白：确认 `npm install` 完成",
+      "提示词不完整：补齐屏幕说明与行为备注",
+      "换设备丢设计：先导出或复制分享链接",
+      "AI 助手报错：检查 Key 与额度",
+      "子路径部署 404：设置 `NEXT_PUBLIC_BASE_PATH`"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/m3e-canvas-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/m3e-canvas-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "M3E Canvas",
+    "M3E Canvas 部署",
+    "Material 3 画布",
+    "界面 草图 提示词",
+    "vibe coding 界面",
+    "Material 3 Expressive",
+    "静态 Next.js",
+    "m3e canvas 教程",
+    "UI 提示词 生成",
+    "m3e-canvas deploy guide"
+  ],
+  "topics": [
+    "material-design",
+    "ui-design",
+    "nextjs",
+    "prompt-engineering",
+    "static-site",
+    "m3e-canvas"
+  ]
+}
